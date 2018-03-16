@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--为DAO接口提供sql语句方法-->
+<mapper namespace="org.select.dao.UserDao">
+    <select id="queryByUsername" resultType="user">
+        select
+        *from
+       login
+        where username=#{username}
+    </select>
+</mapper>

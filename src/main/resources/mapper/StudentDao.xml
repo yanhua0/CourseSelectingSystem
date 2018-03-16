@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--为DAO接口提供sql语句方法-->
+<mapper namespace="org.select.dao.StudentDao">
+    <insert id="insert">
+        insert
+        into student(username, student_name, course_id, course_name, course_teacher, classroom)
+value(#{username},#{studentName},#{courseId},#{courseName},#{courseTeacher},#{classroom})
+    </insert>
+    <select id="queryByUsernameAndCourseId" resultType="student">
+        select *from student
+        where username=#{username}
+        and course_id=#{courseId}
+
+    </select>
+    <select id="queryByCourseId" resultType="java.lang.Integer">
+        select count(*) from student
+        where course_id=#{courseId}
+   </select>
+</mapper>
